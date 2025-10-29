@@ -1,7 +1,7 @@
 {
 	"name": "@rayhan-bapari/notyfyre-vue",
 	"version": "0.1.0",
-	"type": "module",
+	"description": "Elegant toast notifications for Vue 3, inspired by Notyfyre (Laravel).",
 	"main": "dist/index.cjs",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
@@ -17,14 +17,30 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup src/index.ts --format esm,cjs --dts --clean && node scripts/copy-css.js",
-		"typecheck": "vue-tsc --noEmit"
+		"build": "tsup --config tsup.config.ts && node scripts/copy-css.js",
+		"typecheck": "vue-tsc --noEmit",
+		"dev": "vite --config playground/vite.config.ts"
 	},
 	"peerDependencies": {
 		"vue": "^3.4.0"
 	},
-	"devDependencies": {
-		"tsup": "^8.0.0"
+	"license": "MIT",
+	"author": "Rayhan Bapari <mdrayhanbapari02@gmail.com>",
+	"keywords": [
+		"vue3",
+		"toast",
+		"notification",
+		"plugin",
+		"notyfyre"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rayhan-bapari/notyfyre-vue"
 	},
-	"license": "MIT"
+	"devDependencies": {
+		"@types/node": "^24.9.2",
+		"tsup": "^8.5.0",
+		"unplugin-vue": "^7.0.3",
+		"vite": "^7.1.12"
+	}
 }
