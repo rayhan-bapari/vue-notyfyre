@@ -1,6 +1,6 @@
 {
 	"name": "@rayhanbapari/vue-notyfyre",
-	"version": "0.1.2",
+	"version": "0.1.0",
 	"description": "Elegant toast notifications for Vue 3, inspired by Notyfyre (Laravel).",
 	"main": "dist/index.cjs",
 	"module": "dist/index.mjs",
