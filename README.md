@@ -1,4 +1,4 @@
-# @rayhan-bapari/notyfyre-vue
+# @rayhanbapari/vue-notyfyre
 
 > Elegant toast notifications for **Vue 3**, inspired by the [Laravel Notyfyre](https://github.com/rayhan-bapari/Notyfyre) package.
 
@@ -18,9 +18,9 @@
 ## 📦 Installation
 
 ```bash
-npm install @rayhan-bapari/notyfyre-vue
+npm install @rayhanbapari/vue-notyfyre
 # or
-yarn add @rayhan-bapari/notyfyre-vue
+yarn add @rayhanbapari/vue-notyfyre
 ```
 
 ## Register the plugin
@@ -29,8 +29,8 @@ yarn add @rayhan-bapari/notyfyre-vue
 import { createApp } from 'vue';
 import App from './App.vue';
 
-import Notyfyre from '@rayhan-bapari/notyfyre-vue';
-import '@rayhan-bapari/notyfyre-vue/style.css';
+import Notyfyre from '@rayhanbapari/vue-notyfyre';
+import '@rayhanbapari/vue-notyfyre/style.css';
 
 createApp(App)
   .use(Notyfyre)
@@ -39,7 +39,7 @@ createApp(App)
 
 // Add the container once
 <script setup lang="ts">
-import { NotyfyreContainer } from '@rayhan-bapari/notyfyre-vue';
+import { NotyfyreContainer } from '@rayhanbapari/vue-notyfyre';
 </script>
 
 <template>
@@ -72,7 +72,7 @@ notyfyre.options({
 });
 
 // Using the composable
-import { useNotyfyre } from '@rayhan-bapari/notyfyre-vue';
+import { useNotyfyre } from '@rayhanbapari/vue-notyfyre';
 const noty = useNotyfyre();
 noty.success('Data saved!');
 ```
