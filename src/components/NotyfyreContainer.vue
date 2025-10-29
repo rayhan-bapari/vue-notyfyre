@@ -19,17 +19,23 @@ const groups = computed<Record<NotyPosition, NotyItem[]>>(() => {
 
 <template>
     <Teleport to="body">
-        <div v-for="(items, pos) in groups" :key="pos" class="notyfyre__container" :class="`pos-${pos}`">
-            <TransitionGroup name="notyfade">
-                <div v-for="t in items" :key="t.id" class="notyfyre noty--card" :class="`type-${t.type}`">
-                    <div class="noty--title">{{ t.title }}</div>
-
-                    <div v-if="t.options.progress && t.options.autoClose !== false" class="noty--progress"
-                        :style="{ animationDuration: (t.options.autoClose || 0) + 'ms' }"></div>
-
-                    <button class="noty--close" @click="remove(t.id)">×</button>
+        <TransitionGroup v-for="(items, pos) in groups" :key="pos" tag="div" name="toast" class="toast-list"
+            :data-position="pos">
+            <article v-for="t in items" :key="t.id" class="toast" :class="[
+                `toast-${t.type}`,
+                { 'toast-auto-close': t.options.progress && t.options.autoClose !== false }
+            ]" :data-position="pos">
+                <div class="toast-content">
+                    <span class="toast-title">{{ t.title }}</span>
                 </div>
-            </TransitionGroup>
-        </div>
+
+                <div v-if="t.options.progress && t.options.autoClose !== false" class="toast-progress"
+                    :style="{ animationDuration: (t.options.autoClose || 0) + 'ms' }"></div>
+
+                <div class="toast-close">
+                    <button type="button" @click="remove(t.id)" aria-label="Dismiss notification">x</button>
+                </div>
+            </article>
+        </TransitionGroup>
     </Teleport>
 </template>
